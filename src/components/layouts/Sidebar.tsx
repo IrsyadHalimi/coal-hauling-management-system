@@ -8,6 +8,34 @@ import {
 
 import NavigationItem from './NavigationItem'
 
+const menus = [
+  {
+    label: 'Dashboard',
+    icon: <LayoutDashboard size={20} />,
+    to: '/',
+  },
+  {
+    label: 'Fleet Monitoring',
+    icon: <Truck size={20} />,
+    to: '/fleet-monitoring',
+  },
+  {
+    label: 'Trips',
+    icon: <ClipboardList size={20} />,
+    to: '/trips',
+  },
+  {
+    label: 'Dispatch',
+    icon: <Activity size={20} />,
+    to: '/dispatch',
+  },
+  {
+    label: 'Production',
+    icon: <BarChart3 size={20} />,
+    to: '/production',
+  },
+]
+
 function Sidebar() {
   return (
     <aside
@@ -28,35 +56,14 @@ function Sidebar() {
       </div>
 
       <nav className="flex flex-1 flex-col gap-2">
-        <NavigationItem
-          to="/"
-          label="Dashboard"
-          icon={<LayoutDashboard size={20} />}
-        />
-
-        <NavigationItem
-          to="/fleet-monitoring"
-          label="Fleet Monitoring"
-          icon={<Truck size={20} />}
-        />
-
-        <NavigationItem
-          to="/trips"
-          label="Trips"
-          icon={<ClipboardList size={20} />}
-        />
-
-        <NavigationItem
-          to="/dispatch"
-          label="Dispatch"
-          icon={<Activity size={20} />}
-        />
-
-        <NavigationItem
-          to="/production"
-          label="Production"
-          icon={<BarChart3 size={20} />}
-        />
+        {menus.map((menu) => (
+          <NavigationItem
+            key={menu.label}
+            label={menu.label}
+            icon={menu.icon}
+            to={menu.to}
+          />
+        ))}
       </nav>
 
       <div
