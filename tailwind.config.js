@@ -11,7 +11,7 @@ export default {
         background: '#0F172A',
         card: '#1E293B',
 
-        primary: '#F59E0B',
+        primary: '#7fceff',
 
         success: '#22C55E',
         warning: '#FACC15',

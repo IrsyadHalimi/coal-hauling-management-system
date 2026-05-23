@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom'
 
 import './assets/styles/global.css'
-
-import { router } from '@/app/router'
+import 'leaflet/dist/leaflet.css'
+import { router } from './app/router'
 
 ReactDOM.createRoot(
   document.getElementById('root')!

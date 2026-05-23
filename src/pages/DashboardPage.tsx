@@ -1,24 +1,10 @@
-import { useEffect } from 'react'
-
 import KPICard from '../components/dashboard/KPICard'
 import MonitoringOverview from '../components/dashboard/MonitoringOverview'
 
-import { useFleetStore } from '../features/monitoring/store/useFleetStore'
+import { useRealtimeFleet } from '../features/monitoring/hooks/useRealtimeFleet'
 
 function DashboardPage() {
-  const simulateRealtime =
-    useFleetStore(
-      (state) =>
-        state.simulateRealtime
-    )
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      simulateRealtime()
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [simulateRealtime])
+  useRealtimeFleet()
 
   return (
     <div className="space-y-8">

@@ -2,6 +2,8 @@ import FleetActivityCard from './FleetActivityCard'
 
 import { useFleetStore } from '../../features/monitoring/store/useFleetStore'
 
+import HaulingMap from '../../components/maps/HaulingMap'
+
 function MonitoringOverview() {
   const trucks =
     useFleetStore(
@@ -41,21 +43,7 @@ function MonitoringOverview() {
         </div>
       </div>
 
-      <div
-        className="
-          rounded-2xl border border-slate-800
-          bg-card p-6
-        "
-      >
-        <h2 className="text-xl font-semibold">
-          Realtime Monitoring Map
-        </h2>
-
-        <p className="mt-3 text-slate-400">
-          Truck hauling route monitoring
-          will be implemented here.
-        </p>
-      </div>
+      <HaulingMap />
     </section>
   )
 }
