@@ -8,16 +8,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0F172A',
-        card: '#1E293B',
+        background:
+          'var(--color-background)',
 
-        primary: '#7fceff',
+        sidebar:
+          'var(--color-sidebar)',
 
-        success: '#22C55E',
-        warning: '#FACC15',
-        danger: '#EF4444',
+        card:
+          'var(--color-card)',
 
-        sidebar: '#111827',
+        primary:
+          'var(--color-primary)',
+
+        success:
+          'var(--color-success)',
+
+        warning:
+          'var(--color-warning)',
+
+        danger:
+          'var(--color-danger)',
+
+        border:
+          'var(--color-border)',
+
+        textPrimary:
+          'var(--color-text-primary)',
+
+        textSecondary:
+          'var(--color-text-secondary)',
+
+        textMuted:
+          'var(--color-text-muted)',
       },
     },
   },

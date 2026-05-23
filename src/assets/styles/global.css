@@ -1,3 +1,5 @@
+@import './theme.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,14 +10,19 @@
     system-ui,
     sans-serif;
 
-  color: white;
-  background: #0f172a;
+  color: var(--color-text-primary);
+
+  background:
+    var(--color-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
 }
 
 html,
@@ -28,7 +35,12 @@ body,
 
 body {
   overflow-x: hidden;
-  background: #0f172a;
+
+  background:
+    var(--color-background);
+
+  color:
+    var(--color-text-primary);
 }
 
 * {

@@ -2,6 +2,10 @@ import KPICard from '../components/dashboard/KPICard'
 import MonitoringOverview from '../components/dashboard/MonitoringOverview'
 
 import { useRealtimeFleet } from '../features/monitoring/hooks/useRealtimeFleet'
+import EventLog from '../components/dashboard/EventLog'
+
+import FuelChart from '../components/dashboard/charts/FuelChart'
+import ProductionChart from '../components/dashboard/charts/ProductionChart'
 
 function DashboardPage() {
   useRealtimeFleet()
@@ -41,6 +45,19 @@ function DashboardPage() {
       </section>
 
       <MonitoringOverview />
+
+      <section
+        className="
+          grid grid-cols-1 gap-6
+          xl:grid-cols-2
+        "
+      >
+        <ProductionChart />
+
+        <FuelChart />
+      </section>
+
+      <EventLog />
     </div>
   )
 }

@@ -1,0 +1,24 @@
+:root {
+  /* Background */
+  --color-background: #020617;
+
+  /* Surface */
+  --color-sidebar: #0f172a;
+  --color-card: #111827;
+
+  /* Brand */
+  --color-primary: #f59e0b;
+
+  /* Status */
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-danger: #ef4444;
+
+  /* Text */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+
+  /* Border */
+  --color-border: #1e293b;
+}
