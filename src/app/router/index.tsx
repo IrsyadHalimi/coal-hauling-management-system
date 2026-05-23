@@ -4,42 +4,87 @@ import {
 
 import DashboardLayout from '../../components/layouts/DashboardLayout'
 
-import DashboardPage from '../../pages/DashboardPage'
-import DispatchPage from '../../pages/DispatchPage'
-import FleetMonitoringPage from '../../pages/FleetMonitoringPage'
-import ProductionPage from '../../pages/ProductionPage'
-import TripsPage from '../../pages/TripsPage'
+const DashboardPage = lazy(
+  () => import('../../pages/DashboardPage')
+)
+
+const FleetMonitoringPage = lazy(
+  () =>
+    import(
+      '../../pages/FleetMonitoringPage'
+    )
+)
+
+const TripsPage = lazy(
+  () => import('../../pages/TripsPage')
+)
+
+const DispatchPage = lazy(
+  () =>
+    import('../../pages/DispatchPage')
+)
+
+const ProductionPage = lazy(
+  () =>
+    import('../../pages/ProductionPage')
+)
+
+import { lazy, Suspense } from 'react'
 
 export const router =
   createBrowserRouter([
     {
       path: '/',
-      element: <DashboardLayout />,
+      element: (
+        <Suspense fallback={<div>Loading...</div>}> 
+          <DashboardLayout />
+        </Suspense>
+      ),
 
       children: [
         {
           index: true,
-          element: <DashboardPage />,
+          element: (
+            <Suspense fallback={<div>Loading...</div>}> 
+              <DashboardPage />
+            </Suspense>
+          ),
         },
 
         {
           path: 'fleet-monitoring',
-          element: <FleetMonitoringPage />,
+          element: (
+            <Suspense fallback={<div>Loading...</div>}> 
+              <FleetMonitoringPage />
+            </Suspense>
+          ),
         },
 
         {
           path: 'trips',
-          element: <TripsPage />,
+          element: (
+            <Suspense fallback={<div>Loading...</div>}> 
+              <TripsPage />
+            </Suspense>
+          ),
         },
 
         {
           path: 'dispatch',
-          element: <DispatchPage />,
+          element: (
+            <Suspense fallback={<div>Loading...</div>}> 
+              <DispatchPage />
+            </Suspense>
+          ),
         },
 
         {
           path: 'production',
-          element: <ProductionPage />,
+          element: (
+            <Suspense fallback={<div>Loading...</div>}> 
+              <ProductionPage />
+            </Suspense>
+          ),
         },
       ],
     },

@@ -1,10 +1,12 @@
+import { memo } from 'react'
+
 type Props = {
   title: string
   value: string
   subtitle: string
 }
 
-function KPICard({
+function KPICardComponent({
   title,
   value,
   subtitle,
@@ -30,5 +32,7 @@ function KPICard({
     </div>
   )
 }
+
+const KPICard = memo(KPICardComponent)
 
 export default KPICard

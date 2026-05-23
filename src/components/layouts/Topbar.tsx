@@ -1,4 +1,14 @@
+import { Menu } from 'lucide-react'
+
+import { useSidebar } from '../../hooks/useSidebar'
+
 function Topbar() {
+  const toggleSidebar =
+  useSidebar(
+    (state) =>
+      state.toggleSidebar
+  )
+
   return (
     <header
       className="
@@ -9,6 +19,15 @@ function Topbar() {
       "
     >
       <div>
+        <button
+          onClick={toggleSidebar}
+          className="
+            rounded-xl border border-border
+            p-2 lg:hidden
+          "
+        >
+          <Menu size={20} />
+        </button>
         <h2 className="text-xl font-semibold">
           Coal Hauling Monitoring
         </h2>

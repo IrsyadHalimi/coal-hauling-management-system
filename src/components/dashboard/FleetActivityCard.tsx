@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import StatusBadge from './StatusBadge'
 
 import type { Truck } from '../../features/monitoring/types/truck'
@@ -6,7 +8,7 @@ type Props = {
   truck: Truck
 }
 
-function FleetActivityCard({
+function FleetActivityCardComponent({
   truck,
 }: Props) {
   return (
@@ -41,5 +43,9 @@ function FleetActivityCard({
     </div>
   )
 }
+
+const FleetActivityCard = memo(
+  FleetActivityCardComponent
+)
 
 export default FleetActivityCard
