@@ -18,7 +18,7 @@ function HaulingMap() {
     <div
       className="
         overflow-hidden rounded-2xl
-        border border-slate-800
+        border border-slate-800 z-50
       "
     >
       <MapContainer

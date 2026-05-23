@@ -7,8 +7,11 @@ import EventLog from '../components/dashboard/EventLog'
 import FuelChart from '../components/dashboard/charts/FuelChart'
 import ProductionChart from '../components/dashboard/charts/ProductionChart'
 
+import { useRealtimeEvents } from '../features/realtime/hooks/useRealtimeEvents'
+
 function DashboardPage() {
   useRealtimeFleet()
+  useRealtimeEvents()
 
   return (
     <div className="space-y-8">
