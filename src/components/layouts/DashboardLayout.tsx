@@ -4,7 +4,11 @@ import Sidebar from './Sidebar'
 import Topbar from './Topbar'
 import MobileSidebar from './MobileSidebar'
 
+import { useApplyTheme } from '../../features/theme/hooks/useApplyTheme'
+
 function DashboardLayout() {
+  useApplyTheme()
+  
   return (
     <div className="flex min-h-screen bg-background">
       <div className="hidden lg:block">

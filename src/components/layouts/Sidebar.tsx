@@ -8,35 +8,53 @@ import {
 
 import NavigationItem from './NavigationItem'
 
-const menus = [
-  {
-    label: 'Dashboard',
-    icon: <LayoutDashboard size={20} />,
-    to: '/',
-  },
-  {
-    label: 'Fleet Monitoring',
-    icon: <Truck size={20} />,
-    to: '/fleet-monitoring',
-  },
-  {
-    label: 'Trips',
-    icon: <ClipboardList size={20} />,
-    to: '/trips',
-  },
-  {
-    label: 'Dispatch',
-    icon: <Activity size={20} />,
-    to: '/dispatch',
-  },
-  {
-    label: 'Production',
-    icon: <BarChart3 size={20} />,
-    to: '/production',
-  },
-]
+
 
 function Sidebar() {
+  const role = 'DISPATCHER'
+  const menus = [
+    {
+      label: 'Dashboard',
+      icon: <LayoutDashboard size={20} />,
+      to: '/',
+
+      visible:
+      role === 'DISPATCHER',
+    },
+    {
+      label: 'Fleet Monitoring',
+      icon: <Truck size={20} />,
+      to: '/fleet-monitoring',
+
+      visible:
+      role === 'DISPATCHER',
+    },
+    {
+      label: 'Trips',
+      icon: <ClipboardList size={20} />,
+      to: '/trips',
+
+      visible:
+      role === 'DISPATCHER',
+    },
+    {
+      label: 'Dispatch',
+      icon: <Activity size={20} />,
+      to: '/dispatch',
+
+      visible:
+      role === 'DISPATCHER',
+    },
+    {
+      label: 'Production',
+      icon: <BarChart3 size={20} />,
+      to: '/production',
+
+      visible:
+      role === 'DISPATCHER',
+    },
+  ]
+
   return (
     <aside
       className="
@@ -56,7 +74,9 @@ function Sidebar() {
       </div>
 
       <nav className="flex flex-1 flex-col gap-2">
-        {menus.map((menu) => (
+        {menus
+          .filter((menu) => menu.visible)
+          .map((menu) => (
           <NavigationItem
             key={menu.label}
             label={menu.label}

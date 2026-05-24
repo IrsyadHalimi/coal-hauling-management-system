@@ -6,6 +6,8 @@ import NotificationBell from '../../components/notifications/NotificationBell'
 
 import ShiftSwitcher from '../../components/shift/ShiftSwitcher'
 
+import ThemeSwitcher from '../../components/theme/ThemeSwitcher'
+
 function Topbar() {
   const toggleSidebar =
   useSidebar(
@@ -63,6 +65,8 @@ function Topbar() {
         </div>
 
         <div className="flex items-center gap-4">
+          <ThemeSwitcher />
+
           <ShiftSwitcher />
 
           <NotificationBell />

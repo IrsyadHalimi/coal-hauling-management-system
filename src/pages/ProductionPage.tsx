@@ -2,6 +2,7 @@ import EventLog from '../components/dashboard/EventLog'
 
 import FuelChart from '../components/dashboard/charts/FuelChart'
 import ProductionChart from '../components/dashboard/charts/ProductionChart'
+import AnalyticsFilter from '../components/dashboard/AnalyticsFilter'
 
 function ProductionPage() {
   return (
@@ -18,6 +19,8 @@ function ProductionPage() {
         </p>
       </div>
 
+      <AnalyticsFilter />
+      
       <section
         className="
           grid grid-cols-1 gap-6

@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+import { persist } from 'zustand/middleware'
+
 type SidebarStore = {
   isOpen: boolean
 
@@ -9,16 +11,24 @@ type SidebarStore = {
 }
 
 export const useSidebar =
-  create<SidebarStore>((set) => ({
-    isOpen: false,
+  create<SidebarStore>()(
+    persist(
+      (set) => ({
+      isOpen: false,
 
-    toggleSidebar: () =>
-      set((state) => ({
-        isOpen: !state.isOpen,
-      })),
+      toggleSidebar: () =>
+        set((state) => ({
+          isOpen: !state.isOpen,
+        })),
 
-    closeSidebar: () =>
-      set({
-        isOpen: false,
+      closeSidebar: () =>
+        set({
+          isOpen: false,
+        }),
       }),
-  }))
+      {
+        name:
+          'coal-hauling-sidebar',
+      },
+    )
+  )
